@@ -22,9 +22,9 @@ import {
   firstUserInteraction,
   isAiSpeakingState,
   loadingState,
-  modesState,
   mcpState,
   messagesState,
+  modesState,
   resumeThreadErrorState,
   sessionIdState,
   sessionState,
@@ -39,8 +39,9 @@ import {
   IAction,
   ICommand,
   IElement,
-  IMode,
+  IMcp,
   IMessageElement,
+  IMode,
   IStep,
   ITasklistElement,
   IThread
@@ -245,7 +246,9 @@ const useChatSession = () => {
       });
 
       socket.on('resume_thread', (thread: IThread) => {
-        const isReadOnlyView = Boolean((thread as any)?.metadata?.viewer_read_only);
+        const isReadOnlyView = Boolean(
+          (thread as any)?.metadata?.viewer_read_only
+        );
         if (!isReadOnlyView && idToResume && thread.id !== idToResume) {
           window.location.href = `/thread/${thread.id}`;
         }
@@ -470,6 +473,18 @@ const useChatSession = () => {
           default:
             toast(data.message);
             break;
+        }
+      });
+
+      socket.on('authorized_mcps', (data: { mcps: IMcp[] }) => {
+        if (data.mcps && Array.isArray(data.mcps)) {
+          setMcps((prev) => {
+            const existingNames = new Set(prev.map((mcp) => mcp.name));
+            const newMcps = data.mcps.filter(
+              (mcp) => !existingNames.has(mcp.name)
+            );
+            return [...prev, ...newMcps];
+          });
         }
       });
     },

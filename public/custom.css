@@ -1,0 +1,273 @@
+/* Custom Chainlit Markdown Styling - Claude-inspired */
+
+/* Target all possible message content containers */
+.message-content,
+.step-content,
+[class*="message"] [class*="content"],
+.markdown-body,
+.MuiBox-root {
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: #d4d4d8 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Paragraphs - better spacing */
+.message-content p,
+.step-content p,
+[class*="message"] p {
+  margin: 1.2em 0 !important;
+  line-height: 1.7 !important;
+}
+
+/* Headers - clean and prominent */
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4,
+.step-content h1,
+.step-content h2,
+.step-content h3,
+.step-content h4,
+[class*="message"] h1,
+[class*="message"] h2,
+[class*="message"] h3,
+[class*="message"] h4 {
+  margin-top: 2em !important;
+  margin-bottom: 0.8em !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  color: #fafafa !important;
+  letter-spacing: -0.02em !important;
+}
+
+.message-content h1,
+.step-content h1,
+[class*="message"] h1 {
+  font-size: 1.875em !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.message-content h2,
+.step-content h2,
+[class*="message"] h2 {
+  font-size: 1.5em !important;
+  font-weight: 600 !important;
+}
+
+.message-content h3,
+.step-content h3,
+[class*="message"] h3 {
+  font-size: 1.25em !important;
+  font-weight: 600 !important;
+}
+
+.message-content h4,
+.step-content h4,
+[class*="message"] h4 {
+  font-size: 1.125em !important;
+  font-weight: 600 !important;
+}
+
+/* Lists - cleaner, more spacious */
+.message-content ul,
+.message-content ol,
+.step-content ul,
+.step-content ol,
+[class*="message"] ul,
+[class*="message"] ol {
+  margin: 1.2em 0 !important;
+  padding-left: 1.8em !important;
+}
+
+.message-content li,
+.step-content li,
+[class*="message"] li {
+  margin: 0.6em 0 !important;
+  line-height: 1.7 !important;
+  color: #d4d4d8 !important;
+}
+
+.message-content ul li::marker,
+.step-content ul li::marker,
+[class*="message"] ul li::marker {
+  color: #71717a !important;
+}
+
+.message-content ol li::marker,
+.step-content ol li::marker,
+[class*="message"] ol li::marker {
+  color: #71717a !important;
+  font-weight: 500 !important;
+}
+
+/* Strong emphasis */
+.message-content strong,
+.message-content b,
+.step-content strong,
+.step-content b,
+[class*="message"] strong,
+[class*="message"] b {
+  color: #fafafa !important;
+  font-weight: 600 !important;
+}
+
+/* Italic text */
+.message-content em,
+.message-content i,
+.step-content em,
+.step-content i,
+[class*="message"] em,
+[class*="message"] i {
+  color: #e4e4e7 !important;
+  font-style: italic !important;
+}
+
+/* Inline code */
+.message-content code:not(pre code),
+.step-content code:not(pre code),
+[class*="message"] code:not(pre code) {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #fca5a5 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas', monospace !important;
+  font-weight: 400 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Code blocks */
+.message-content pre,
+.step-content pre,
+[class*="message"] pre {
+  background-color: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 1.2em !important;
+  overflow-x: auto !important;
+  margin: 1.5em 0 !important;
+}
+
+.message-content pre code,
+.step-content pre code,
+[class*="message"] pre code {
+  background-color: transparent !important;
+  color: #e4e4e7 !important;
+  padding: 0 !important;
+  border: none !important;
+  font-size: 0.9em !important;
+  line-height: 1.6 !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas', monospace !important;
+}
+
+/* Tables - clean and modern like Claude */
+.message-content table,
+.step-content table,
+[class*="message"] table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1.5em 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  font-size: 15px !important;
+}
+
+.message-content thead,
+.step-content thead,
+[class*="message"] thead {
+  background-color: transparent !important;
+}
+
+.message-content th,
+.step-content th,
+[class*="message"] th {
+  color: #18181b !important;
+  font-weight: 600 !important;
+  padding: 0.75em 1em !important;
+  text-align: left !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-size: 15px !important;
+  background-color: #fafafa !important;
+}
+
+.message-content td,
+.step-content td,
+[class*="message"] td {
+  padding: 0.75em 1em !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  color: #18181b !important;
+  background-color: #ffffff !important;
+  font-size: 15px !important;
+}
+
+.message-content tbody tr:hover,
+.step-content tbody tr:hover,
+[class*="message"] tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.message-content tbody tr:last-child td,
+.step-content tbody tr:last-child td,
+[class*="message"] tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Blockquotes */
+.message-content blockquote,
+.step-content blockquote,
+[class*="message"] blockquote {
+  border-left: 3px solid #3f3f46 !important;
+  padding-left: 1.2em !important;
+  margin: 1.5em 0 !important;
+  color: #a1a1aa !important;
+  font-style: normal !important;
+}
+
+/* Links */
+.message-content a,
+.step-content a,
+[class*="message"] a {
+  color: #60a5fa !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(96, 165, 250, 0.3) !important;
+  text-underline-offset: 2px !important;
+  transition: all 0.2s ease !important;
+}
+
+.message-content a:hover,
+.step-content a:hover,
+[class*="message"] a:hover {
+  color: #93c5fd !important;
+  text-decoration-color: rgba(147, 197, 253, 0.5) !important;
+}
+
+/* Horizontal rules */
+.message-content hr,
+.step-content hr,
+[class*="message"] hr {
+  border: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin: 2em 0 !important;
+}
+
+/* Images */
+.message-content img,
+.step-content img,
+[class*="message"] img {
+  max-width: 100% !important;
+  border-radius: 8px !important;
+  margin: 1.5em 0 !important;
+}
+
+/* Better text wrapping */
+.message-content,
+.step-content,
+[class*="message"] {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
