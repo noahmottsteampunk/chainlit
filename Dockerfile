@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY azure_openai_demo.py azure_openai_mcp_demo.py ./
 COPY .chainlit/ ./.chainlit/
+COPY public/ ./public/
 
 ENV AZURE_OPENAI_API_KEY=""
 ENV CHAINLIT_APP_ROOT=/app

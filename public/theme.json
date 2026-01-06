@@ -1,0 +1,53 @@
+{
+    "custom_fonts": [],
+    "variables": {
+        "light": {
+            "--font-sans": "'Inter', sans-serif",
+            "--font-mono": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
+            "--background": "0 0% 100%",
+            "--foreground": "0 0% 10%",
+            "--card": "40 20% 98%",
+            "--card-foreground": "0 0% 10%",
+            "--popover": "0 0% 100%",
+            "--popover-foreground": "0 0% 10%",
+            "--primary": "95 25% 42%",
+            "--primary-foreground": "0 0% 5%",
+            "--secondary": "15 45% 48%",
+            "--secondary-foreground": "0 0% 100%",
+            "--muted": "40 20% 96%",
+            "--muted-foreground": "0 0% 0%",
+            "--accent": "95 30% 45%",
+            "--accent-foreground": "0 0% 5%",
+            "--destructive": "0 65% 50%",
+            "--destructive-foreground": "0 0% 100%",
+            "--border": "40 15% 88%",
+            "--input": "40 15% 92%",
+            "--ring": "95 25% 42%",
+            "--radius": "0.5rem"
+        },
+        "dark": {
+            "--font-sans": "'Inter', sans-serif",
+            "--font-mono": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
+            "--background": "95 15% 12%",
+            "--foreground": "40 20% 90%",
+            "--card": "95 15% 16%",
+            "--card-foreground": "40 20% 90%",
+            "--popover": "95 15% 16%",
+            "--popover-foreground": "40 20% 90%",
+            "--primary": "95 30% 55%",
+            "--primary-foreground": "95 15% 12%",
+            "--secondary": "15 40% 50%",
+            "--secondary-foreground": "40 25% 97%",
+            "--muted": "95 15% 22%",
+            "--muted-foreground": "40 15% 65%",
+            "--accent": "95 35% 50%",
+            "--accent-foreground": "95 15% 12%",
+            "--destructive": "0 60% 50%",
+            "--destructive-foreground": "0 0% 100%",
+            "--border": "95 15% 25%",
+            "--input": "95 15% 25%",
+            "--ring": "95 30% 55%",
+            "--radius": "0.5rem"
+        }
+    }
+}

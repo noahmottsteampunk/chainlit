@@ -8,7 +8,7 @@
 .MuiBox-root {
   font-size: 15px !important;
   line-height: 1.65 !important;
-  color: #d4d4d8 !important;
+  color: hsl(var(--foreground)) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif !important;
   letter-spacing: 0.01em !important;
 }
@@ -38,7 +38,7 @@
   margin-bottom: 0.8em !important;
   font-weight: 600 !important;
   line-height: 1.25 !important;
-  color: #fafafa !important;
+  color: hsl(var(--foreground)) !important;
   letter-spacing: -0.02em !important;
 }
 
@@ -47,7 +47,7 @@
 [class*="message"] h1 {
   font-size: 1.875em !important;
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: hsl(var(--foreground)) !important;
 }
 
 .message-content h2,
@@ -87,7 +87,7 @@
 [class*="message"] li {
   margin: 0.6em 0 !important;
   line-height: 1.7 !important;
-  color: #d4d4d8 !important;
+  color: hsl(var(--foreground)) !important;
 }
 
 .message-content ul li::marker,
@@ -110,7 +110,7 @@
 .step-content b,
 [class*="message"] strong,
 [class*="message"] b {
-  color: #fafafa !important;
+  color: hsl(var(--foreground)) !important;
   font-weight: 600 !important;
 }
 
@@ -121,7 +121,7 @@
 .step-content i,
 [class*="message"] em,
 [class*="message"] i {
-  color: #e4e4e7 !important;
+  color: hsl(var(--foreground)) !important;
   font-style: italic !important;
 }
 
@@ -270,4 +270,85 @@
 [class*="message"] {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+}
+
+/* Compact tool/step boxes */
+.step,
+[class*="step"],
+[class*="Step"] {
+  margin: 0.2em 0 !important;
+  padding: 0.1em !important;
+}
+
+.step-header,
+[class*="step-header"],
+[class*="StepHeader"] {
+  padding: 0.2em 0.4em !important;
+  min-height: auto !important;
+  font-size: 0.85em !important;
+  line-height: 1.2 !important;
+}
+
+.step-content,
+[class*="step-content"],
+[class*="StepContent"] {
+  padding: 0.3em 0.4em !important;
+  font-size: 0.9em !important;
+}
+
+/* Compact step/tool buttons and accordions */
+button[class*="step"],
+button[class*="Step"],
+button[class*="accordion"],
+button[class*="Accordion"],
+div[class*="accordion"],
+div[class*="Accordion"] {
+  padding: 0.15em 0.4em !important;
+  min-height: 24px !important;
+  height: auto !important;
+  font-size: 0.85em !important;
+  margin: 0.1em 0 !important;
+}
+
+/* Compact Shadcn/Radix UI Accordion components used by Chainlit Steps */
+[data-radix-collection-item] {
+  margin: 0.1em 0 !important;
+  border: none !important;
+}
+
+/* Accordion trigger (the "Used get_nass_data" button) */
+button[data-state] {
+  padding: 0.1em 0 !important;
+  margin: 0 !important;
+  min-height: auto !important;
+  height: auto !important;
+  font-size: 0.8em !important;
+  line-height: 1.2 !important;
+}
+
+/* Accordion content */
+[data-state="open"] + div[data-state] {
+  margin-top: 0.2em !important;
+  margin-left: 0.1em !important;
+  padding-left: 0.5em !important;
+}
+
+/* Step container divs */
+div[id^="step-"] {
+  margin: 0.1em 0 !important;
+  padding: 0.1em 0 !important;
+  font-size: 0.85em !important;
+}
+
+/* Generic accordion wrappers */
+[role="region"] {
+  padding: 0.2em 0 !important;
+  margin: 0 !important;
+}
+
+/* Make logo larger */
+.logo {
+  max-width: 375px !important;
+  width: 375px !important;
+  height: auto !important;
 }

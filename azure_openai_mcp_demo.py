@@ -115,9 +115,9 @@ async def start():
         ]
     })
 
-    await cl.Message(
-        content="Hello! I'm an AI assistant powered by Azure OpenAI GPT-5.2 with access to authorized MCP servers.\n\nClick the plug icon (top right) to view and connect to authorized MCP servers."
-    ).send()
+    # Don't auto-connect - let user manually connect via plug icon
+    # Don't send a greeting message - let user see the landing page
+    # User will see the logo and can start chatting when ready
 
 
 @cl.on_chat_end
@@ -591,7 +591,9 @@ Remember: You are a specialized agricultural data tool with visualization capabi
             "content": final_content
         })
 
-        cl.user_session.set("message_history", message_history[-10:])
+        # Keep last 20 messages to ensure we don't break tool call sequences
+        # (assistant with tool_calls + tool responses must stay together)
+        cl.user_session.set("message_history", message_history[-20:])
 
     except Exception as e:
         error_message = f"Error: {str(e)}"
