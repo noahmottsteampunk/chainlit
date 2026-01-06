@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir chainlit openai
+    pip install --no-cache-dir chainlit openai mcp plotly pandas
 
 COPY azure_openai_demo.py azure_openai_mcp_demo.py ./
 COPY .chainlit/ ./.chainlit/
