@@ -12,7 +12,6 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Tooltip,
   TooltipContent,
@@ -20,7 +19,6 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip';
 
-import { McpAddForm } from './AddForm';
 import AnimatedPlugIcon from './AnimatedPlugIcon';
 import { McpList } from './List';
 
@@ -33,7 +31,6 @@ const McpButton = ({ disabled }: Props) => {
   const [mcps] = useRecoilState(mcpState);
 
   const [open, setOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('add');
 
   const allowSse = !!config?.features.mcp?.sse?.enabled;
   const allowStdio = !!config?.features.mcp?.stdio?.enabled;
@@ -81,31 +78,11 @@ const McpButton = ({ disabled }: Props) => {
         className="min-w-[50vw] max-h-[85vh] flex flex-col gap-6 bg-background overflow-y-auto"
       >
         <DialogHeader>
-          <DialogTitle>MCP Servers</DialogTitle>
+          <DialogTitle>Authorized MCP Servers</DialogTitle>
         </DialogHeader>
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid grid-cols-2 mb-4">
-            <TabsTrigger value="add">Connect an MCP</TabsTrigger>
-            <TabsTrigger value="list">My MCPs</TabsTrigger>
-          </TabsList>
-
-          <TabsContent
-            value="add"
-            className="flex flex-col flex-grow gap-6 p-1"
-          >
-            <McpAddForm
-              allowSse={allowSse}
-              allowStdio={allowStdio}
-              allowHttp={allowHttp}
-              onSuccess={() => setActiveTab('list')}
-              onCancel={() => setOpen(false)}
-            />
-          </TabsContent>
-
-          <TabsContent value="list" className="flex flex-col gap-4">
-            <McpList onAddNewClick={() => setActiveTab('add')} />
-          </TabsContent>
-        </Tabs>
+        <div className="flex flex-col gap-4">
+          <McpList onAddNewClick={() => {}} />
+        </div>
       </DialogContent>
     </Dialog>
   );

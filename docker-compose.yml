@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  chainlit-azure-openai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - CHAINLIT_APP_ROOT=/app
+    volumes:
+      - ./.chainlit:/app/.chainlit
+      - ./azure_openai_demo.py:/app/azure_openai_demo.py
+      - ./azure_openai_mcp_demo.py:/app/azure_openai_mcp_demo.py
+    restart: unless-stopped
+    container_name: chainlit-azure-openai-mcp

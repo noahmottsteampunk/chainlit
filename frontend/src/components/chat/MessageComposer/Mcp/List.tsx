@@ -31,7 +31,7 @@ interface McpListProps {
   onAddNewClick: () => void;
 }
 
-export const McpList = ({ onAddNewClick }: McpListProps) => {
+export const McpList = ({ onAddNewClick: _onAddNewClick }: McpListProps) => {
   const apiClient = useContext(ChainlitContext);
   const sessionId = useRecoilValue(sessionIdState);
   const [mcps, setMcps] = useRecoilState(mcpState);
@@ -60,10 +60,10 @@ export const McpList = ({ onAddNewClick }: McpListProps) => {
   if (!mcps || mcps.length === 0) {
     return (
       <div className="text-center py-8 text-muted-foreground">
-        <p>No MCP servers connected</p>
-        <Button variant="outline" className="mt-4" onClick={onAddNewClick}>
-          Add your first MCP server
-        </Button>
+        <p>No authorized MCP servers available</p>
+        <p className="text-sm mt-2">
+          Please contact your administrator to add MCP servers
+        </p>
       </div>
     );
   }
